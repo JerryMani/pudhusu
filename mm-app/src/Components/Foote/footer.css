@@ -1,0 +1,30 @@
+/* Footer styling */
+footer {
+    background-color: black;
+    border-top: 1px solid #de3131;
+    padding: 40px;
+    text-align: center;
+    font-size: 14px;  
+    color: #e42d2d;
+  }
+  
+  /* Footer links */
+  footer a {
+    color: #e13838;
+    text-decoration: none;
+    height: auto;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+
+
+  @media (min-width: 768px){
+
+.rig .col-md-8 {
+    flex: 0 0 auto;
+    width: 37%;
+}
+  }
