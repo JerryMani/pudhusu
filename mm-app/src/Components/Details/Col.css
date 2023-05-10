@@ -241,15 +241,20 @@
     font-family: inherit
 }
 
+.row .row-space{
+    margin: 0;
+    padding: 0;
+}
 .abc .input-group {
     position: relative;
     margin-bottom: 32px;
     border-bottom: 1px solid #e5e5e5;
-    padding-left: 10px;
+    padding-left: 0px;
 }
 .abc .input-group1{
     position: relative;
     margin-bottom: 32px;
+    /* padding: 20px; */
 }
 
 .abc .input-icon {
@@ -267,7 +272,8 @@
 }
 
 .abc .input--style-2 {
-    padding: 6px 10px;
+    /* padding: 6px 10px; */
+    padding-right: 30px;
     color: #666;
     font-size: 16px;
     font-weight: 500

@@ -14,7 +14,7 @@ const OtpForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('OTP:', otp);
-    navigate("/")
+    navigate("/Home")
   }
 
   return (

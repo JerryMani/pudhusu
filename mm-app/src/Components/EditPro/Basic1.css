@@ -28,30 +28,29 @@
     border-radius: 8px;
     background-color: #4070f4;
 }
-.container .form1{
+.container .form{
     position: relative;
-    margin-top: 20px;
-    overflow: hidden;
-    height: 100vh;
+    margin-top: 16px;
+    height: 120vh;
     background-color: #fff;
-    
+    overflow: hidden;
 }
-.container form .form1{
+.container form .form{
     position: absolute;
     background-color: #fff;
     transition: 0.3s ease;
 }
-.container form .form1 .second{
+.container form .form.second{
     opacity: 0;
     pointer-events: none;
     transform: translateX(100%);
 }
-form.secActive .form1 .second{
+form.secActive .form.second{
     opacity: 1;
     pointer-events: auto;
     transform: translateX(0);
 }
-form.secActive .form1 .first{
+form.secActive .form.first{
     opacity: 0;
     pointer-events: none;
     transform: translateX(-100%);

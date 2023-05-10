@@ -9,7 +9,7 @@ function PartnerPreferenceDetails() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    navigate("/otpform")
+    navigate("/Image")
   }
   return (
     <div className="abc">
@@ -25,10 +25,10 @@ function PartnerPreferenceDetails() {
             <form method="POST" onSubmit={handleSubmit}>
 
 
-            <div className="input-group">
+            <div className="input-group1">
               <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                 <option disabled="disabled" selected="selected">
                 Marital Status
@@ -92,13 +92,13 @@ function PartnerPreferenceDetails() {
 
 
 
-              <div className="input-group">
+              <div className="input-group1">
 
 
          
 <select
   id="height"
-  className="input--style-2  browser-default custom-select "
+  className="input--style-2  browser-default "
 >
   <option disabled="disabled" selected="selected">
   Religion
@@ -110,10 +110,10 @@ function PartnerPreferenceDetails() {
 </select>
 </div>
 
-<div className="input-group">
+<div className="input-group1">
 <select
   id="height"
-  className="input--style-2  browser-default custom-select "
+  className="input--style-2  browser-default "
 >
   <option disabled="disabled" selected="selected">
   Caste 
@@ -127,10 +127,10 @@ function PartnerPreferenceDetails() {
 </div>
 
 
-<div className="input-group">
+<div className="input-group1">
 <select
   id="height"
-  className="input--style-2  browser-default custom-select "
+  className="input--style-2  browser-default "
 >
   <option disabled="disabled" selected="selected">
   Sub Caste 
@@ -148,10 +148,10 @@ function PartnerPreferenceDetails() {
 
               <div className="row row-space">
                 <div className="col-2">
-                  <div className="input-group">
+                  <div className="input-group1">
                   <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default"
                 >
                 <option disabled="disabled" selected="selected">
                       Height
@@ -167,10 +167,10 @@ function PartnerPreferenceDetails() {
                 </div>
 
                 <div className="col-2">
-                  <div className="input-group">
+                  <div className="input-group1">
                   <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                 <option disabled="disabled" selected="selected">
                 Weight
@@ -196,10 +196,10 @@ function PartnerPreferenceDetails() {
                 <div className="row row-space">
                 <div className="col-2">
 
-              <div className="input-group">
+              <div className="input-group1">
               <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                 <option disabled="disabled" selected="selected">
                 Body Type
@@ -218,10 +218,10 @@ function PartnerPreferenceDetails() {
               
               <div className="col-2">
 
-              <div className="input-group">
+              <div className="input-group1">
               <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                 <option disabled="disabled" selected="selected">
                 Complexion
@@ -242,10 +242,10 @@ function PartnerPreferenceDetails() {
 </div>
 
 
-              <div className="input-group">
+              <div className="input-group1">
               <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                 <option disabled="disabled" selected="selected">
                 Physical Status

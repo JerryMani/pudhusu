@@ -46,17 +46,18 @@ const HomeProf = () => {
         </ul>
         <ul className="homeprof-setting-list">
           <li className="homeprof-setting-item">Verify Your Profile</li>
-          <li className="homeprof-setting-item">Daily Recommendations</li>
+          <li className="homeprof-setting-item">
+          <Link to="/horoscope">Horoscope</Link>
+</li>
+
         </ul>
         <ul className="homeprof-setting-list">
-          <li className="homeprof-setting-item">Your Conversations</li>
-          <li className="homeprof-setting-item">Your Calls</li>
+          <li className="homeprof-setting-item">
+          <Link to="/Mailbox">Your Conversations</Link>
+</li>
         </ul>
         <ul className="homeprof-setting-list">
-          <li className="homeprof-setting-item">Settings</li>
-          <li className="homeprof-setting-item">Help</li>
-          <li className="homeprof-setting-item">Our Matchmaking Services</li>
-          <li className="homeprof-setting-item">Wedding Services</li>
+          <li className="homeprof-setting-item">Help & Services</li>
           <li className="homeprof-setting-item">Success Stories</li>
         </ul>
       </div>

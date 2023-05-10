@@ -18,10 +18,10 @@ function ReligiousInformation() {
             <div className="card-body">
               <h2 className="title">Religious Information</h2>
               <form method="POST" onSubmit={handleSubmit}>
-                <div className="input-group">
+                <div className="input-group1">
                   <select
                     id="height"
-                    className="input--style-2  browser-default custom-select "
+                    className="input--style-2  browser-default "
                   >
                     <option disabled="disabled" selected="selected">
                       Religion
@@ -32,10 +32,10 @@ function ReligiousInformation() {
                   </select>
                 </div>
 
-                <div className="input-group">
+                <div className="input-group1">
                   <select
                     id="height"
-                    className="input--style-2  browser-default custom-select "
+                    className="input--style-2  browser-default "
                   >
                     <option disabled="disabled" selected="selected">
                       Caste
@@ -47,10 +47,10 @@ function ReligiousInformation() {
                   </select>
                 </div>
 
-                <div className="input-group">
+                <div className="input-group1">
                   <select
                     id="height"
-                    className="input--style-2  browser-default custom-select "
+                    className="input--style-2  browser-default "
                   >
                     <option disabled="disabled" selected="selected">
                       Sub Caste
@@ -62,10 +62,10 @@ function ReligiousInformation() {
                   </select>
                 </div>
 
-                <div className="input-group">
+                <div className="input-group1">
                   <select
                     id="height"
-                    className="input--style-2  browser-default custom-select "
+                    className="input--style-2  browser-default "
                   >
                     <option disabled="disabled" selected="selected">
                       Star
@@ -93,10 +93,10 @@ function ReligiousInformation() {
                   </select>
                 </div>
 
-                <div className="input-group">
+                <div className="input-group1">
                   <select
                     id="height"
-                    className="input--style-2  browser-default custom-select "
+                    className="input--style-2  browser-default "
                   >
                     <option disabled="disabled" selected="selected">
                       Raasi
@@ -106,10 +106,10 @@ function ReligiousInformation() {
                   </select>
                 </div>
 
-                <div className="input-group">
+                <div className="input-group1">
                   <select
                     id="height"
-                    className="input--style-2  browser-default custom-select "
+                    className="input--style-2  browser-default "
                   >
                     <option disabled="disabled" selected="selected">
                       ChevvaiDosham/Manglik

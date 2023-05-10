@@ -16,12 +16,12 @@ const Header = () => {
         <img src={logo} alt="Tamil Matrimony" className="company-logo" />
         <ul className="header-nav-links-list">
           <li className="header-nav-links-item">
-            <NavLink to="/" className="header-nav-link">
+            <NavLink to="/home" className="header-nav-link">
               MY HOME
             </NavLink>
           </li>
           <li className="header-nav-links-item">
-            <NavLink to="/myHome" className="header-nav-link">
+            <NavLink to="/searchbox" className="header-nav-link">
               SEARCH
             </NavLink>
           </li>
@@ -31,16 +31,15 @@ const Header = () => {
             </NavLink>
             {dropDown && (
               <ul className="sub-menu">
-                <li>Matches</li>
-                <li>Matches</li>
-                <li>Matches</li>
-                <li>Matches</li>
-                <li>Matches</li>
+                <li>Daily Recommendations</li>
+                <li>Total Matches</li>
+                <li>All Matches</li>
+                
             </ul>
             )}
           </li>
           <li className="header-nav-links-item">
-            <NavLink to="/myHome" className="header-nav-link">
+            <NavLink to="/mailbox" className="header-nav-link">
               MAILBOX
             </NavLink>
           </li>

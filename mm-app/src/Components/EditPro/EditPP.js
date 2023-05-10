@@ -1,5 +1,6 @@
 import React from 'react'
-import "./Basic.css"
+import { Link } from 'react-router-dom'
+import "./EditPro.css"
 function EditPreference() {
 
 
@@ -7,7 +8,7 @@ function EditPreference() {
     <div class="container co1">
     <header>Edit Partner Preference</header>
     <form action="#">
-        <div class="form first">
+        <div class="form1">
             <div class="details personal">
                 <span class="title">Personal Details</span>
                 <div class="fields">
@@ -92,6 +93,10 @@ function EditPreference() {
                 <span class="title">Personal Details</span>
                 <div class="fields">
                 <div class="input-field">
+                        <label>Min-Max Age</label>
+                        <input type="text" placeholder=" " required/>
+                    </div>
+                <div class="input-field">
                         <label>Height</label>
                         <input type="text" placeholder=" " required/>
                     </div>
@@ -115,7 +120,7 @@ function EditPreference() {
                     
                 </div>
                 <button class="nextBtn">
-                    <span class="btnText">Save</span>
+                <Link className="btnText" to="/home">Save Profile</Link>
                     <i class="uil uil-navigator"></i>
                 </button>
             </div> 

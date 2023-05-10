@@ -31,7 +31,7 @@
 .container form{
     position: relative;
     margin-top: 16px;
-    height: 180vh;
+    height: 200vh;
     background-color: #fff;
     overflow: hidden;
 }
@@ -122,6 +122,8 @@ form .fields .input-field{
 .container form .btnText{
     font-size: 14px;
     font-weight: 400;
+    color: white;
+    text-decoration: none;
 }
 form button:hover{
     background-color: #265df2;

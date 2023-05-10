@@ -16,11 +16,15 @@ import Home from "./Components/Home/Home";
 import Matches from "./Components/Matches/Matches";
 import Payment from "./Components/Payment/Payment";
 import Header from "./Components/Header/Header";
-import ViewProfile from "./Components/ViewProfile/Viewpro";
-import ViewProfile1 from "./Components/ViewProfile/ViewProfile1";
+import ViewProfile from "./Components/Vp/ViewProfile";
+import ViewProfile1 from "./Components/Vp/ViewProfile1";
 import EditProfile from "./Components/EditPro/EditProfile";
 import BasicDetails1 from "./Components/EditPro/BasicDetails1";
 import EditPreference from "./Components/EditPro/EditPP";
+import Image from "./Components/Details/Image";
+import SearchBox from "./Components/Search/Search";
+import Mailbox from "./Components/Mailbox/Mailbox";
+import HoroscopeBoxes from "./Components/horo/Horo";
 
 function App() {
   return (
@@ -40,9 +44,9 @@ function App() {
           element={<PartnerPreferenceDetails />}
         />
         <Route path="/OtpForm" element={<OtpForm />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/" element={<Register />} />
         <Route
-          path="/"
+          path="/Home"
           element={
             <>
               <Header />
@@ -58,11 +62,24 @@ function App() {
             </>
           }
         />
-                <Route path="/ViewProfile" element={<ViewProfile/>} />
+                {/* <Route path="/ViewProfile" element={<ViewProfile/>} /> */}
                 <Route path="/ViewProfile1" element={<ViewProfile1/>} />
+                <Route path="/ViewProfile" element={<ViewProfile/>} />
+
                 <Route path="/EditProfile" element={<EditProfile/>} />
+                <Route path="/Image" element={<Image/>} />
+                <Route path="/SearchBox" element={
+                  <>
+                  <Header/>
+                <SearchBox/>
+                  </>
+                } />
 
-
+                <Route path="/MailBox" element={
+                  <><Header/>
+                <Mailbox/> 
+                  </>
+                             }             />
                 <Route path="/BasicDetails1" element={
                   <>   <Header />  <BasicDetails1/> 
 </>
@@ -72,6 +89,8 @@ function App() {
                   <>   <Header />  <EditPreference/> 
 </>
                 } />
+
+<Route path="/horoscope" element={<> <Header/> <HoroscopeBoxes /></>}/>
 
         <Route
           path="/payment/paymentoption"

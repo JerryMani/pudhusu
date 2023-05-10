@@ -14,6 +14,7 @@ export default function Login() {
 
   return (
     <>
+    
       <Button variant="primary" onClick={handleShow} className='log-btn'>
         Login
       </Button>
@@ -40,7 +41,8 @@ export default function Login() {
                 <form className='reg-log-from-details'>
                     <input type='text' placeholder='Enter Email ID' className='form-control'/>
                     <input type='tel' placeholder='Enter password' className='form-control'/>
-                    <button type='submit' className='btn btn-primary'>Login</button>
+                   
+                    <button type='submit' className='btn btn-primary'> <Link to="/home">Login</Link></button>
                 </form>
                 <p className='forgot-pass'>Forgot password?</p>
             </div>
@@ -49,7 +51,8 @@ export default function Login() {
         <Modal.Footer>
             <div className='new-user-login'>
                 <p>New user?</p>
-                <Link to="/">Register</Link>
+               {/* <Link to="/">Register</Link> */}
+               <button type='button' onClick={handleClose}>Register</button>
             </div>
           {/* <Button variant="secondary" onClick={handleClose}>
             Close

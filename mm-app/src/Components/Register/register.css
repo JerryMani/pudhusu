@@ -2,7 +2,11 @@
   padding: 3rem 0;
   overflow: hidden;
 }
-
+.parag{
+  margin-right: -700px;
+  margin-top: 15px;
+  
+}
 .reg-nav {
   display: flex;
   justify-content: space-between;
@@ -91,4 +95,10 @@
     color: #fff;
     width:300px;
     height: 300px;
+}
+@media screen and (max-width: 767px) {
+  .parag {
+    margin-right: 0;
+    margin-top: 0;
+  }
 }

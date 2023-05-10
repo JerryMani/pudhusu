@@ -19,12 +19,17 @@ footer {
     text-decoration: underline;
   }
   
-
+ .left{
+  margin-left: -70px;
+ }
+.rig{
+  margin-right: 60px;
+}
 
   @media (min-width: 768px){
 
 .rig .col-md-8 {
     flex: 0 0 auto;
-    width: 37%;
+    width: 32%;
 }
   }

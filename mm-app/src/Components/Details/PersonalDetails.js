@@ -63,7 +63,7 @@ function PersonalDetails() {
                   <div className="input-group">
                   <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                 <option disabled="disabled" selected="selected">
                       Height
@@ -82,7 +82,7 @@ function PersonalDetails() {
                   <div className="input-group">
                   <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                 <option disabled="disabled" selected="selected">
                 Weight
@@ -106,7 +106,7 @@ function PersonalDetails() {
               <div className="input-group">
               <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default  "
                 >
                 <option disabled="disabled" selected="selected">
                 Body Type
@@ -128,7 +128,7 @@ function PersonalDetails() {
               <div className="input-group">
               <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default  "
                 >
                 <option disabled="disabled" selected="selected">
                 Complexion
@@ -151,7 +151,7 @@ function PersonalDetails() {
               <div className="input-group">
               <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                 <option disabled="disabled" selected="selected">
                 Physical Status

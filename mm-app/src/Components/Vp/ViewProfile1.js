@@ -1,9 +1,8 @@
 import React from "react";
-import "./EditPro.css";
-import img1 from "../images/boy.jpg";
-import { Link } from "react-router-dom";
+import "./viewpro.css";
+import img1 from "../images/girl.jpeg";
 
-function EditProfile() {
+function ViewProfile1() {
   return (
     <section className="back">
       <div class="container py-5">
@@ -12,7 +11,7 @@ function EditProfile() {
             <div class="card mb-4">
               <div class="card-body text-center">
                 <img src={img1} className="img-fluid" alt="Tamil Matrimony" />
-                <h5 class="my-3">John Smith</h5>
+                <h5 class="my-3">Gopika</h5>
                 <p class="text-muted mb-1">Full Stack Developer</p>
                 <p class="text-muted mb-4">Bay Area, San Francisco, CA</p>
                 {/* <div class="d-flex justify-content-center mb-2">
@@ -250,9 +249,7 @@ function EditProfile() {
                 </div>
                </div>
 
-              <div className="bt">
-                <Link to="/BasicDetails1">Edit</Link>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -261,4 +258,4 @@ function EditProfile() {
   );
 }
 
-export default EditProfile;
+export default ViewProfile1;

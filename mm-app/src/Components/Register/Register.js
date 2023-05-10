@@ -22,25 +22,43 @@ const Register = () => {
         <Link className="logo-link-img">
           <img src={logo} alt="Tamil Matrimony" />
         </Link>
+        <p className="parag">Already have an account? </p>
         <Link className="reg-login">
-          <Login />
+        <Login />
         </Link>
       </div>
       <div className="reg-body-cont">
         <div className="reg-form-cont">
         <h2 style={{textAlign: "center", color: "#fff", fontSize: "1.5rem"}}>A Happy marriage is the union of to good forgivers</h2>
           <form className="reg-form-content" onSubmit={handleRegister}>
-            <input type="text" placeholder="Name" className="form-controls" />
-            {/* <select className="form-controls">
-              <option>Profile for</option>
-              <option value="Myself">Myself</option>
-            </select>
-            <select className="form-controls">
-              <option>Gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-            </select> */}
-            <input type="date" className="form-controls" />
+            <select type="text" placeholder="Profile For" className="form-controls" >
+            
+                  <option disabled="disabled" selected="selected">
+                    Profile for
+                  </option>
+
+                  <option value="1">Myself</option>
+                  <option value="3">Daughter</option>
+                  <option value="3">Son</option>
+
+                  <option value="2">Brother</option>
+                  <option value="3">Sister</option>
+                  <option value="3">Relative</option>
+                  <option value="3">Friend</option>
+                </select>
+             
+                <select type="text" placeholder="Looking For" className="form-controls" >
+            
+            <option disabled="disabled" selected="selected">
+            Looking For
+            </option>
+
+            <option value="Bride">Bride</option>
+            <option value="Groom">Groom</option>
+          
+          </select>
+
+           
             <input
               type="tel"
               placeholder="Mobile"

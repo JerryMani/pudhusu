@@ -51,11 +51,11 @@ const Footer = () => {
       </div>
 
       <div className="row bg-pink text-white mb-4">
-        <div className="col-md-4 text-center">
-          <p>© 2023 Matrimony. All Right Reserved.</p>
+        <div className="left col-md-6 text-center">
+          <p>© 2023 Matrimony. All Rights Reserved.</p>
         </div>
-        <div className="rig col-md-8 ms-auto">
-          <p>Designed By Virtual Technologies </p>
+        <div className="rig col-md-6 ms-auto">
+          <p>Designed and Developed By Virtual Technologies </p>
         </div>
       </div>
     </footer>

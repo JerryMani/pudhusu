@@ -49,13 +49,18 @@ function Cool() {
                   </div>
                 </div>
 
-                {/* <div className="row row-space"> */}
+          
+              </div>
+
+
+
+              <div className="row row-space">
                 <div className="col-2">
-                  <div className="input-group1">
+                <div className="input-group1">
                     <select
                       name="Gender"
                       id="sex"
-                      className="input--style-2 mb-4 browser-default custom-select"
+                      className="input--style-2 mb-4 browser-default "
                     >
                       {" "}
                       <option disabled="disabled" selected="selected">
@@ -63,17 +68,53 @@ function Cool() {
                       </option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
-                      <option value="unspesified">Other</option>
+                      <option value="unspesified">Others</option>
                     </select>
                   </div>
                 </div>
+
+                {/* <div className="row row-space"> */}
+                <div className="col-2">
+                <div className="input-group1">
+                <select
+                  id="height"
+                  className="input--style-2  browser-default"
+                >
+                  <option disabled="disabled" selected="selected">
+                    Marital Status
+                  </option>
+
+                  <option value="1">Married</option>
+                  <option value="2">UnMarried</option>
+
+                  <option value="3">Divorced</option>
+                  <option value="4">Widower</option>
+                  <option value="2">Awaiting divorce</option>
+                </select>
               </div>
-              {/* </div>    */}
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
               <div className="input-group1">
                 <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                   <option disabled="disabled" selected="selected">
                     Profile for
@@ -90,31 +131,31 @@ function Cool() {
                 </select>
               </div>
 
+             
+
               <div className="input-group1">
                 <select
-                  id="height"
-                  className="input--style-2  browser-default custom-select "
+                  id="height" 
+                  className="input--style-2  browser-default"
+                  onclick="this.size=20;" onchange="this.size=5; this.blur();" onblur="this.size=5;"
+
                 >
                   <option disabled="disabled" selected="selected">
-                    Marital Status
+                    Mother Tongue
                   </option>
-
-                  <option value="1">Married</option>
-                  <option value="2">UnMarried</option>
-
-                  <option value="3">Divorced</option>
-                  <option value="4">Widower</option>
-                  <option value="2">Awaiting divorce</option>
+  <option value="Tamil">Tamil</option>
+  <option value="Telugu">Telugu</option>
+  <option value="Malayalam">Malayalam</option>
+  <option value="Kannada">Kannada</option>
+  <option value="Hindi">Hindi</option>
+  <option value="Marathi">Marathi</option>
+  <option value="Gujarati">Gujarati</option>
+  <option value="Bengali">Bengali</option>
+  <option value="Punjabi">Punjabi</option>
+  <option value="Urdu">Urdu</option>
+  <option value="Sanskrit">Sanskrit</option>
+  <option value="Other">Other</option>
                 </select>
-              </div>
-
-              <div className="input-group">
-                <input
-                  className="input--style-2"
-                  type="text"
-                  placeholder="Mother Tongue"
-                  name="email"
-                />
               </div>
 
               <div className="input-group">

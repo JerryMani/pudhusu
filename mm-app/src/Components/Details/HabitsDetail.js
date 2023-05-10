@@ -17,10 +17,10 @@ function HabitDetails() {
           <div className="card-body">
             <h2 className="title">Habit Details</h2>
             <form method="POST" onSubmit={handleSubmit}>
-              <div className="input-group">
+              <div className="input-group1">
                 <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default  "
                 >
                   <option disabled="disabled" selected="selected">
                   Food Habits
@@ -34,10 +34,10 @@ function HabitDetails() {
               </div>
 
 
-              <div className="input-group">
+              <div className="input-group1">
                 <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default  "
                 >
                   <option disabled="disabled" selected="selected">
                   smoking Habits
@@ -52,10 +52,10 @@ function HabitDetails() {
               </div>
 
               
-              <div className="input-group">
+              <div className="input-group1">
                 <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                   <option disabled="disabled" selected="selected">
                   Drinking Habits

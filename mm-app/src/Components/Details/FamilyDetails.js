@@ -106,10 +106,10 @@ function FamilyDetails() {
               
 
 
-              <div className="input-group">
+              <div className="input-group1">
                 <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                   <option disabled="disabled" selected="selected">
                     Family Status
@@ -122,10 +122,10 @@ function FamilyDetails() {
               </div>
 
 
-              <div className="input-group">
+              <div className="input-group1">
                 <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                   <option disabled="disabled" selected="selected">
                     Family Type
@@ -138,10 +138,10 @@ function FamilyDetails() {
               </div>
 
               
-              <div className="input-group">
+              <div className="input-group1">
                 <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                   <option disabled="disabled" selected="selected">
                     Family Values
@@ -155,10 +155,10 @@ function FamilyDetails() {
               </div>
 
 
-              <div className="input-group">
+              <div className="input-group1">
                 <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                   <option disabled="disabled" selected="selected">
                    Number of Sisters
@@ -171,10 +171,10 @@ function FamilyDetails() {
                 </select>
               </div>
 
-              <div className="input-group">
+              <div className="input-group1">
                 <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                   <option disabled="disabled" selected="selected">
                    Number of Brothers
@@ -187,10 +187,10 @@ function FamilyDetails() {
                 </select>
               </div>
 
-              <div className="input-group">
+              <div className="input-group1">
                 <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                   <option disabled="disabled" selected="selected">
                   Married Sisters
@@ -204,10 +204,10 @@ function FamilyDetails() {
               </div>
 
 
-              <div className="input-group">
+              <div className="input-group1">
                 <select
                   id="height"
-                  className="input--style-2  browser-default custom-select "
+                  className="input--style-2  browser-default "
                 >
                   <option disabled="disabled" selected="selected">
                   Married Brothers 

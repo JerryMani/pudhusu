@@ -18,6 +18,11 @@
     flex-direction: column;
 }
 
+.reg-log-from-details a {
+    color:white;
+    text-decoration: none;
+}
+
 .logo-log-img {
     width: 200px;
 }
