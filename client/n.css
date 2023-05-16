@@ -1,0 +1,294 @@
+.button1 {
+  background-color: #d46e44;
+  padding: 15px 45px;
+  border-radius: 30px;
+}
+.button2 {
+  background-color: #febdbc;
+  padding: 15px 75px;
+  border-radius: 30px;
+}
+.back {
+  background-color: #fde9d1;
+}
+.bt {
+  background-color: #d46e44;
+  border: none;
+  border-radius: 30px;
+  margin-top: 50px;
+  padding: 15px 50px;
+}
+.bot1 {
+  text-align: start;
+  margin-top: 50px;
+}
+.bot {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.bot p {
+  text-align: start;
+}
+
+.icon {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  box-shadow: 0 2px 2px #999;
+  padding: 0px;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.row-foote {
+  margin: 20px;
+}
+
+.para {
+  width: 80%;
+
+  color: rgb(91, 50, 0);
+}
+.para1 {
+  border: 50px;
+  border-radius: 20px;
+  background-color: rgb(249, 205, 152);
+  color: rgb(238, 159, 62);
+  width: 60%;
+  text-align: center;
+  padding: 8px 0px;
+}
+.left {
+  text-align: end;
+  padding-right: 80px;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .row-foote {
+    flex-direction: column;
+  }
+
+  .col-4 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .para1 {
+    margin-top: 20px;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .col-6 {
+    display: none;
+  }
+}
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 30px auto;
+  width: 300px;
+  height: 300px;
+  border-radius: 40px;
+  /* box-shadow: 5px 5px 30px 7px rgba(0,0,0,0.25), -5px -5px 30px 7px rgba(0,0,0,0.22); */
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.card_title p {
+  font-weight: 600;
+}
+.card .card_image {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
+
+@media all and (max-width: 500px) {
+  .card-list {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .nav-item {
+    margin: 0;
+  }
+  .navbar-collapse {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .button1 {
+    display: block;
+    margin-right: auto;
+    margin-left: 0;
+    width: 30px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: #000;
+  }
+  .button2 {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    width: 30px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: #000;
+  }
+  .back {
+    padding-top: 50px;
+  }
+  .bot {
+    text-align: center;
+  }
+  .bot1 {
+    margin-left: 0;
+  }
+  .bt {
+    margin-top: 20px;
+  }
+  .icon {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .nav-item {
+    margin: 0;
+  }
+  .navbar-collapse {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .button1 {
+    display: block;
+    margin-right: auto;
+    margin-left: 0;
+    width: 30px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: #000;
+  }
+  .button2 {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    width: 30px;
+    height: 4px;
+    border-radius: 5px;
+    background-color: #000;
+  }
+  .back {
+    padding-top: 50px;
+  }
+  .bot {
+    text-align: center;
+  }
+  .bot1 {
+    margin-left: 0;
+  }
+  .bt {
+    margin-top: 20px;
+  }
+  .icon {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .nav-item {
+    margin-right: 20px;
+  }
+  .navbar-collapse {
+    margin-left: 25%;
+    margin-right: 0;
+  }
+  .button1 {
+    display: none;
+  }
+  .button2 {
+    display: none;
+  }
+  .back {
+    padding-top: 50px;
+  }
+  .bot {
+    text-align: center;
+  }
+  .bot1 {
+    margin-left: 0;
+  }
+  .bt {
+    margin-top: 20px;
+  }
+  .icon {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .nav-item {
+    margin-right: 20px;
+  }
+  .navbar-collapse {
+    margin-left: 25%;
+    margin-right: 0;
+  }
+  .button1 {
+    display: none;
+  }
+  .button2 {
+    display: none;
+  }
+  .back {
+    padding-top: 50px;
+  }
+  .bot {
+    text-align: center;
+  }
+  .bot1 {
+    margin-left: 0;
+  }
+  .bt {
+    margin-top: 20px;
+  }
+  .icon {
+    font-size: 30px;
+  }
+}
