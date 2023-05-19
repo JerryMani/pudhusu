@@ -2,9 +2,10 @@ const express = require("express")
 const mysql = require("mysql2");
 const cors = require("cors");
 const bodyParser = require("body-parser")
-const app = express();
+
 const apiBaseUrl = "http://localhost:3000";
 
+const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors({ origin: apiBaseUrl, credentials: true }));
@@ -24,9 +25,33 @@ db.connect((err) => {
 });
 
 // Routes
+// app.post("/api/register", (req, res) => {
+//   const {profile,looking, mobile,password,conform } = req.body;
+//   console.log(req.body)
+
+//   const selectQuery = "SELECT * FROM register WHERE  mobile = ?";
+//   db.query(selectQuery, [mobile], (err, results, fields) => {
+//     if (err) {
+//       res.json({ error: "Internal Server Error" });
+//     } else if (results.length > 0) {
+//       res.json({ error: "User already exists" });
+//     } else {
+//       const sql =
+//         "INSERT INTO register (`profile`,`looking`, `mobile`, `password`,`conform_password`) VALUES (?, ?, ?, ?, ?)";
+//       db.query(sql, [profile,looking, mobile, password,conform], (err, result) => {
+//         if (err) {
+//             throw err
+//             res.json({ error: "Internal Server Error" });
+//         } else {
+//             res.json({ auth: true, user: mobile, message: "User registered successfully!" });
+//           }
+//       });
+//     }
+//   });
+// });
+
 app.post("/api/register", (req, res) => {
   const {profile,looking, mobile,password,conform } = req.body;
-  console.log(req.body)
 
   const selectQuery = "SELECT * FROM register WHERE  mobile = ?";
   db.query(selectQuery, [mobile], (err, results, fields) => {
@@ -34,7 +59,9 @@ app.post("/api/register", (req, res) => {
       res.json({ error: "Internal Server Error" });
     } else if (results.length > 0) {
       res.json({ error: "User already exists" });
-    } else {
+    } else if (password !== conform) {
+      res.json({ error: "Password doesn't match" })
+    } else if (password === conform){
       const sql =
         "INSERT INTO register (`profile`,`looking`, `mobile`, `password`,`conform_password`) VALUES (?, ?, ?, ?, ?)";
       db.query(sql, [profile,looking, mobile, password,conform], (err, result) => {
@@ -42,9 +69,17 @@ app.post("/api/register", (req, res) => {
             throw err
             res.json({ error: "Internal Server Error" });
         } else {
-            res.json({ auth: true, user: mobile, message: "User registered successfully!" });
+            // res.json({ auth: true, user: mobile, message: "User registered successfully!" });
+            const sqls = "SELECT * FROM register WHERE mobile = ?";
+            db.query(sqls, [mobile], (err, data) => {
+              if(err) {
+                throw err
+              } else if (data.length > 0){
+                const userMob = data[0].mobile
+                res.json({ auth: true, user: userMob, message: "User registered successfully!" });
+              }
+            })
           }
-               
       });
     }
   });

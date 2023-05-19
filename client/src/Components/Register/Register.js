@@ -21,10 +21,10 @@ const Register = () => {
   const [conform, setConform] = useState("");
   const [error, setError] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleRegister = async (event) => {
-    event.preventDefault()
-    const response =await axios.post(
+    event.preventDefault();
+    const response = await axios.post(
       `${API_BASE_URL}/api/register`,
       {
         profile,
@@ -32,24 +32,22 @@ const Register = () => {
         mobile,
         password,
         conform,
-    },
-        {withCredentials: true}
+      },
+      { withCredentials: true }
     );
-    console.log(response.data);
     if (response.data.auth && mobile !== "" && password !== "") {
-        setUser(response.data.user)
-      navigate("/basic-info")
-    setProfile("");
-    setLooking("");  
-    setMobile("");
-    setPassword("");
-    setConform("");
-  } else {
-    setError(response.data.error);
-  }
-  
-  }
-console.log(profile,looking,mobile,password,conform);
+      setUser(response.data.user);
+      navigate("/basic-info", {replace: true});
+      setProfile("");
+      setLooking("");
+      setMobile("");
+      setPassword("");
+      setConform("");
+    } else {
+      setError(response.data.error);
+    }
+  };
+  console.log(profile, looking, mobile, password, conform);
   return (
     <div className="reg-cont">
       <div className="reg-nav">
@@ -58,64 +56,68 @@ console.log(profile,looking,mobile,password,conform);
         </Link>
         <p className="parag">Already have an account? </p>
         <Link className="reg-login">
-        <Login />
+          <Login />
         </Link>
       </div>
       <div className="reg-body-cont">
         <div className="reg-form-cont">
-        <h2 style={{textAlign: "center", color: "#fff", fontSize: "1.5rem"}}>A Happy marriage is the union of to good forgivers</h2>
+          <h2
+            style={{ textAlign: "center", color: "#fff", fontSize: "1.5rem" }}
+          >
+            A Happy marriage is the union of to good forgivers
+          </h2>
           <form className="reg-form-content" onSubmit={handleRegister}>
-            <select value={profile} type="text" placeholder="Profile For" className="form-controls" onChange={(e)=> setProfile(e.target.value)} >
-            
-                  <option disabled="disabled">
-                    Profile for
-                  </option>
+            <select
+              value={profile}
+              type="text"
+              placeholder="Profile For"
+              className="form-controls"
+              onChange={(e) => setProfile(e.target.value)}
+            >
+              <option disabled="disabled">Profile for</option>
+              <option value="Myself">Myself</option>
+              <option value="Daughter">Daughter</option>
+              <option value="son">Son</option>
+              <option value="Brother">Brother</option>
+              <option value="sister">Sister</option>
+              <option value="Relative">Relative</option>
+              <option value="Friend">Friend</option>
+            </select>
 
-                  <option value="Myself">Myself</option>
-                  <option value="Daughter">Daughter</option>
-                  <option value="son">Son</option>
+            <select
+              value={looking}
+              type="text"
+              placeholder="Looking For"
+              className="form-controls"
+              onChange={(e) => setLooking(e.target.value)}
+            >
+              <option disabled="disabled">Looking For</option>
+              <option value="Bride">Bride</option>
+              <option value="Groom">Groom</option>
+            </select>
 
-                  <option value="Brother">Brother</option>
-                  <option value="sister">Sister</option>
-                  <option value="Relative">Relative</option>
-                  <option value="Friend">Friend</option>
-                </select>
-             
-                <select value={looking}type="text" placeholder="Looking For" className="form-controls" onChange={(e)=> setLooking(e.target.value)} >
-            
-            <option disabled="disabled">
-            Looking For
-            </option>
-
-            <option value="Bride">Bride</option>
-            <option value="Groom">Groom</option>
-          
-          </select>
-
-           
             <input
               value={mobile}
               type="tel"
               placeholder="Mobile (for OTP)"
               className="form-controls"
-              onChange={(e)=> setMobile(e.target.value)}
-            />
-            {/* <input type="text" placeholder="Email" className="form-controls" /> */}
- 
-            <input
-            value={password}
-              type="password"
-              placeholder="password"
-              className="form-controls"
-              onChange={(e)=> setPassword(e.target.value)}
+              onChange={(e) => setMobile(e.target.value)}
             />
 
             <input
-            value={conform}
+              value={password}
+              type="password"
+              placeholder="password"
+              className="form-controls"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+
+            <input
+              value={conform}
               type="password"
               placeholder="confirm password"
               className="form-controls"
-              onChange={(e)=> setConform(e.target.value)}
+              onChange={(e) => setConform(e.target.value)}
             />
             <button type="submit" className="btn btn-primary reg-btn">
               Register
@@ -131,9 +133,9 @@ console.log(profile,looking,mobile,password,conform);
           />
         </div>
       </div>
-      <RegContent/>
-      <CardList/>
-      <SS/>
+      <RegContent />
+      <CardList />
+      <SS />
     </div>
   );
 };
