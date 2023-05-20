@@ -346,9 +346,8 @@ app.post("/api/PersonalDetails", (req, res) => {
     complexion,
     physical,
   } = req.body;
-  console.log(req.body);
   const sql =
-    "INSERT INTO personal_details (`user_id`,`education`,`employment_type`,	`occupation`,	`income`,	`height`,`weight`,	`body_type`,	`complexion`,`physical`) VALUES (?,?, ?, ?, ?,?,?,?,?)";
+    "INSERT INTO personal_details (`user_id`,`education`,`employment_type`,	`occupation`,	`income`,	`height`,`weight`,`body_type`,	`complexion`,`physical`) VALUES (?,?, ?, ?, ?,?,?,?,?,?)";
   db.query(
     sql,
     [

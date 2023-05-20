@@ -41,9 +41,9 @@ function Contact() {
     if(response.data.auth) {
       setUser((prevState) => ({
         ...prevState,
-        basic: response.data.userCont,
+        contactDetails: response.data.userCont,
       }));
-    navigate("/familydetails");
+    navigate("/PersonalDetails");
     setAddress("");
     setAddress1("");
     setCity("");
@@ -98,7 +98,7 @@ function Contact() {
                     className="input--style-2 "
                     onChange={(e) => setCountry(e.target.value)}
                   >
-                    <option disabled="disabled" defaultValue>
+                    <option disabled="disabled">
                       Country
                     </option>
 
