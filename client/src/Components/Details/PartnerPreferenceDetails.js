@@ -6,8 +6,7 @@ import UserContext from "../Authcontext";
 import "./Col.css";
 
 function PartnerPreferenceDetails() {
-  
-  const {user} = useContext(UserContext)
+  const {user,setUser} = useContext(UserContext)
   const [pmarital, setPMarital] = useState("");
   const [mtongue, setMtongue] = useState("");
   const [peducation, setPeducation] = useState("");
@@ -29,12 +28,17 @@ function PartnerPreferenceDetails() {
     const response = await axios.post(
       `${API_BASE_URL}/api/PartnerPreferenceDetails`,
       {
-       pmarital,peducation,employ,mtongue,occupa,monincome,preligion,pcaste,pkulam,pheight,pweight,pbodytype,pcomplexion,pphysical,
+       user,pmarital,peducation,employ,mtongue,occupa,monincome,preligion,pcaste,pkulam,pheight,pweight,pbodytype,pcomplexion,pphysical,
        
       },
       {withCredentials:true}
 
     );
+    if(response.data.auth) {
+      setUser((prevState) => ({
+        ...prevState,
+        partnerDetails: response.data.partnerDetails,
+      }));
     navigate("/Image");
     setPMarital("");
     setPeducation("");
@@ -50,7 +54,9 @@ function PartnerPreferenceDetails() {
     setPbodytype("");
     setPcomplexion("");
     setPphysical("")
+    }
   };
+  
   return (
     <div className="abc">
     <div className="page-wrapper bg-red p-t-180 p-b-100 font-robo">

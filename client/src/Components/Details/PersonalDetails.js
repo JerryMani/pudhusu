@@ -55,7 +55,7 @@ const customStyles = {
 
 
 function PersonalDetails() {
-  const {user} = useContext(UserContext)
+  const {user, setUser} = useContext(UserContext)
   const [education, setEducation] = useState("");
   const [emptype,setEmptype] = useState("");
   const [occupation,setOccupation] = useState("");
@@ -76,22 +76,28 @@ function PersonalDetails() {
     const response = await axios.post(
       `${API_BASE_URL}/api/PersonalDetails`,
       {
-        education,emptype,occupation,income,height,weight,bodytype,complexion,physical
+        user,education,emptype,occupation,income,height,weight,bodytype,complexion,physical
       },
       {withCredentials: true}
 
     );
+    if(response.data.auth){
+      setUser((prevState) => ({
+        ...prevState,
+        personalDetails: response.data.personalDetails,
+      }));
     navigate("/familydetails");
+    setEducation("");
+    setEmptype("");
+    setOccupation("");
+    setIncome("");
+    setHeight("");
+    setWeigth("");
+    setBodytype("");
+    setComplexion("");
+    setPhysical("");
+    }
   };
-  setEducation("");
-  setEmptype("");
-  setOccupation("");
-  setIncome("");
-  setHeight("");
-  setWeigth("");
-  setBodytype("");
-  setComplexion("");
-  setPhysical("");
 
   return (
     <div className="abc">

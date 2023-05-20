@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './otp.css';
 import { useNavigate } from 'react-router-dom';
+import UserContext from '../../Authcontext';
 
 const OtpForm = () => {
+  const {user} = useContext(UserContext)
   const [otp, setOtp] = useState('');
   const navigate = useNavigate()
 
@@ -16,6 +18,8 @@ const OtpForm = () => {
     console.log('OTP:', otp);
     navigate("/Home")
   }
+
+  console.log(user);
 
   return (
     <div className='ball'>

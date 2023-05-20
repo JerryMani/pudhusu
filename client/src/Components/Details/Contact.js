@@ -1,19 +1,22 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../api_config";
+import UserContext from "../Authcontext";
 import "./Col.css";
+
 function Contact() {
-  const[address, setAddress] = useState("");
-  const[address1, setAddress1]= useState("");
-  const[city, setCity]= useState("");
-  const[state, setState]= useState("");
-  const[country, setCountry]= useState("");
-  const[address2,setAddress2]= useState("");
-  const[address3,setAddress3]= useState("");
-  const[city1,setCity1]= useState("");
-  const[state1,setState1]=useState("");
-  const[country1,setCountry1]=useState("");
+  const {user,setUser} = useContext(UserContext)
+  const [address, setAddress] = useState("");
+  const [address1, setAddress1] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+  const [country, setCountry] = useState("");
+  const [address2, setAddress2] = useState("");
+  const [address3, setAddress3] = useState("");
+  const [city1, setCity1] = useState("");
+  const [state1, setState1] = useState("");
+  const [country1, setCountry1] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -21,6 +24,7 @@ function Contact() {
     const response = await axios.post(
       `${API_BASE_URL}/api/Contact`,
       {
+        user,
         address,
         address1,
         city,
@@ -31,10 +35,14 @@ function Contact() {
         city1,
         state1,
         country1,
-
       },
-      {withCredentials: true}
-    )
+      { withCredentials: true }
+    );
+    if(response.data.auth) {
+      setUser((prevState) => ({
+        ...prevState,
+        basic: response.data.userCont,
+      }));
     navigate("/familydetails");
     setAddress("");
     setAddress1("");
@@ -46,7 +54,9 @@ function Contact() {
     setCity1("");
     setState1("");
     setCountry1("");
+    }
   };
+
   return (
     <div className="abc">
       <div className="page-wrapper bg-red p-t-180 p-b-100 font-robo">
@@ -56,39 +66,39 @@ function Contact() {
             <div className="card-body">
               <h2 className="title">Contact Details</h2>
               <form method="POST" onSubmit={handleSubmit}>
-              <h3 className="h mb-3">Permanent Address</h3>
+                <h3 className="h mb-3">Permanent Address</h3>
                 <div className="input-group">
                   <input
-                  value={address}
+                    value={address}
                     className="input--style-2"
                     type="text"
                     placeholder="Address line1 "
                     name="name"
-                    onChange={(e)=> setAddress(e.target.value)}
+                    onChange={(e) => setAddress(e.target.value)}
                     required
                   />
                 </div>
 
                 <div className="input-group">
                   <input
-                  value={address1}
+                    value={address1}
                     className="input--style-2"
                     type="text"
                     placeholder="Address 2"
                     name="name"
-                    onChange={(e)=> setAddress1(e.target.value)}
+                    onChange={(e) => setAddress1(e.target.value)}
                     required
                   />
                 </div>
 
                 <div className="input-group1">
                   <select
-                  value={country}
+                    value={country}
                     id="country"
                     className="input--style-2 "
-                    onChange={(e)=> setCountry(e.target.value)}
+                    onChange={(e) => setCountry(e.target.value)}
                   >
-                    <option disabled="disabled" selected="selected">
+                    <option disabled="disabled" defaultValue>
                       Country
                     </option>
 
@@ -415,12 +425,11 @@ function Contact() {
 
                 <div className="input-group1">
                   <select
-                  value={state}
+                    value={state}
                     id="state"
                     className="input--style-2  browser-default "
-                    onChange={(e)=> setState(e.target.value)}
+                    onChange={(e) => setState(e.target.value)}
                   >
-                   
                     <option value="">Select State</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -455,10 +464,10 @@ function Contact() {
 
                 <div className="input-group1">
                   <select
-                  value={city}
+                    value={city}
                     id="city"
                     className="input--style-2  browser-default "
-                    onChange={(e)=> setCity(e.target.value)}
+                    onChange={(e) => setCity(e.target.value)}
                   >
                     <option value="">Select City</option>
                     <option value="Mumbai">Mumbai</option>
@@ -502,40 +511,37 @@ function Contact() {
                   </select>
                 </div>
 
-
-
-
                 <h3 className="h mb-3">Current Address</h3>
                 <div className="input-group">
                   <input
-                  value={address2}
+                    value={address2}
                     className="input--style-2"
                     type="text"
                     placeholder="Address line1 "
                     name="name"
-                    onChange={(e)=> setAddress2(e.target.value)}
+                    onChange={(e) => setAddress2(e.target.value)}
                   />
                 </div>
 
                 <div className="input-group">
                   <input
-                  value={address3}
+                    value={address3}
                     className="input--style-2"
                     type="text"
                     placeholder="Address 2"
                     name="name"
-                    onChange={(e)=> setAddress3(e.target.value)}
+                    onChange={(e) => setAddress3(e.target.value)}
                   />
                 </div>
 
                 <div className="input-group1">
                   <select
-                  value={country1}
+                    value={country1}
                     id="country"
                     className="input--style-2  browser-default "
-                    onChange={(e)=> setCountry1(e.target.value)}
+                    onChange={(e) => setCountry1(e.target.value)}
                   >
-                    <option disabled="disabled" selected="selected">
+                    <option disabled="disabled">
                       Country
                     </option>
 
@@ -862,12 +868,11 @@ function Contact() {
 
                 <div className="input-group1">
                   <select
-                  value={state1}
+                    value={state1}
                     id="state"
                     className="input--style-2  browser-default "
-                    onChange={(e)=> setState1(e.target.value)}
+                    onChange={(e) => setState1(e.target.value)}
                   >
-                 
                     <option value="">Select State</option>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -902,10 +907,10 @@ function Contact() {
 
                 <div className="input-group1">
                   <select
-                  value={city1}
+                    value={city1}
                     id="city"
                     className="input--style-2  browser-default "
-                    onChange={(e)=> setCity1(e.target.value)}
+                    onChange={(e) => setCity1(e.target.value)}
                   >
                     <option value="">Select City</option>
                     <option value="Mumbai">Mumbai</option>

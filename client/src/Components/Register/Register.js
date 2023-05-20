@@ -36,7 +36,7 @@ const Register = () => {
       { withCredentials: true }
     );
     if (response.data.auth && mobile !== "" && password !== "") {
-      setUser(response.data.user);
+      setUser({userId: response.data.userId, userMob: response.data.userMob});
       navigate("/basic-info", {replace: true});
       setProfile("");
       setLooking("");

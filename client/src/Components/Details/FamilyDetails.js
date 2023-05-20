@@ -4,12 +4,13 @@ import { useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../api_config";
 import UserContext from "../Authcontext";
 import "./Col.css";
+
 function FamilyDetails() {
-  const {user} = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext);
   const [father, setFather] = useState("");
   const [fcaste, setFcaste] = useState("");
   const [fkulam, setFkulam] = useState("");
-  const[mother,setMother] = useState("");
+  const [mother, setMother] = useState("");
   const [mcaste, setMcaste] = useState("");
   const [mkulam, setMkulam] = useState("");
   const [fstatus, setFstatus] = useState("");
@@ -24,29 +25,48 @@ function FamilyDetails() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response= await axios.post(
-    `${API_BASE_URL}/api/FamilyDetails`,
-    {
-      father,fcaste,fkulam,mother,mcaste,mkulam,fstatus,ftype,fvalues,sisters,brothers,msisters,mbrothers,parentsno
-
-    },
-    {withCredentials: true}
+    const response = await axios.post(
+      `${API_BASE_URL}/api/FamilyDetails`,
+      {
+        user,
+        father,
+        fcaste,
+        fkulam,
+        mother,
+        mcaste,
+        mkulam,
+        fstatus,
+        ftype,
+        fvalues,
+        sisters,
+        brothers,
+        msisters,
+        mbrothers,
+        parentsno,
+      },
+      { withCredentials: true }
     );
-    navigate("/Religiousinformation");
-    setFather("");
-    setFcaste("");
-    setFkulam("");
-    setMother("");
-    setMcaste("");
-    setMkulam("");
-    setFstatus("");
-    setFtype("");
-    setFvalues("");
-    setSisters("");
-    setBrothers("");
-    setMsisters("");
-    setMbrothers("");
-    setParentsno("");
+    if (response.data.auth) {
+      setUser((prevState) => ({
+        ...prevState,
+        familyDetails: response.data.userFamilyDetails,
+      }));
+      navigate("/Religiousinformation");
+      setFather("");
+      setFcaste("");
+      setFkulam("");
+      setMother("");
+      setMcaste("");
+      setMkulam("");
+      setFstatus("");
+      setFtype("");
+      setFvalues("");
+      setSisters("");
+      setBrothers("");
+      setMsisters("");
+      setMbrothers("");
+      setParentsno("");
+    }
   };
   return (
     <div className="abc">
@@ -61,12 +81,12 @@ function FamilyDetails() {
                   <div className="col-2">
                     <div className="input-group">
                       <input
-                      value={father}
+                        value={father}
                         className="input--style-2"
                         type="text"
                         placeholder="Father's Name"
                         name="name"
-                        onChange={(e)=> setFather(e.target.value)}
+                        onChange={(e) => setFather(e.target.value)}
                       />
                     </div>
                   </div>
@@ -74,12 +94,12 @@ function FamilyDetails() {
                   <div className="col-2">
                     <div className="input-group">
                       <input
-                      value={mother}
+                        value={mother}
                         className="input--style-2"
                         type="text"
                         placeholder="Mothers's Name"
                         name="name"
-                        onChange={(e)=> setMother(e.target.value)}
+                        onChange={(e) => setMother(e.target.value)}
                       />
                     </div>
                   </div>
@@ -89,12 +109,12 @@ function FamilyDetails() {
                   <div className="col-2">
                     <div className="input-group">
                       <input
-                      value={fcaste}
+                        value={fcaste}
                         className="input--style-2"
                         type="text"
                         placeholder="Caste"
                         name="name"
-                        onChange={(e)=> setFcaste(e.target.value)}
+                        onChange={(e) => setFcaste(e.target.value)}
                       />
                     </div>
                   </div>
@@ -102,12 +122,12 @@ function FamilyDetails() {
                   <div className="col-2">
                     <div className="input-group">
                       <input
-                      value={mcaste}
+                        value={mcaste}
                         className="input--style-2"
                         type="text"
                         placeholder="Caste"
                         name="name"
-                        onChange={(e)=> setMcaste(e.target.value)}
+                        onChange={(e) => setMcaste(e.target.value)}
                       />
                     </div>
                   </div>
@@ -117,12 +137,12 @@ function FamilyDetails() {
                   <div className="col-2">
                     <div className="input-group">
                       <input
-                      value={fkulam}
+                        value={fkulam}
                         className="input--style-2"
                         type="text"
                         placeholder="Kulam"
                         name="name"
-                        onChange={(e)=> setFkulam(e.target.value)}
+                        onChange={(e) => setFkulam(e.target.value)}
                       />
                     </div>
                   </div>
@@ -130,12 +150,12 @@ function FamilyDetails() {
                   <div className="col-2">
                     <div className="input-group">
                       <input
-                      value={mkulam}
+                        value={mkulam}
                         className="input--style-2"
                         type="text"
                         placeholder="kulam"
                         name="name"
-                        onChange={(e)=> setMkulam(e.target.value)}
+                        onChange={(e) => setMkulam(e.target.value)}
                       />
                     </div>
                   </div>
@@ -143,28 +163,27 @@ function FamilyDetails() {
 
                 <div className="input-group1">
                   <select
-                  value={fstatus}
+                    value={fstatus}
                     id="family"
                     className="input--style-2 "
-                    onChange={(e)=> setFstatus(e.target.value)}
-              >
-                    <option  selected="selected">
-                      Family Status
-                    </option>
+                    onChange={(e) => setFstatus(e.target.value)}
+                  >
+                    <option selected="selected">Family Status</option>
 
                     <option value="middle class">Middle Class</option>
-                    <option value="upper middle class">Upper Middle Class</option>
+                    <option value="upper middle class">
+                      Upper Middle Class
+                    </option>
                     <option value="rich">Rich</option>
                   </select>
-                  
                 </div>
 
                 <div className="input-group1">
                   <select
-                  value={ftype}
+                    value={ftype}
                     id="ftype"
                     className="input--style-2 "
-                    onChange={(e)=> setFtype(e.target.value)}
+                    onChange={(e) => setFtype(e.target.value)}
                   >
                     <option disabled="disabled" selected="selected">
                       Family Type
@@ -177,10 +196,10 @@ function FamilyDetails() {
 
                 <div className="input-group1">
                   <select
-                  value={fvalues}
+                    value={fvalues}
                     id="fvalues"
                     className="input--style-2 "
-                    onChange={(e)=> setFvalues(e.target.value)}
+                    onChange={(e) => setFvalues(e.target.value)}
                   >
                     <option disabled="disabled" selected="selected">
                       Family Values
@@ -194,10 +213,10 @@ function FamilyDetails() {
 
                 <div className="input-group1">
                   <select
-                  value={sisters}
+                    value={sisters}
                     id="nsisters"
                     className="input--style-2 "
-                    onChange={(e)=> setSisters(e.target.value)}
+                    onChange={(e) => setSisters(e.target.value)}
                   >
                     <option disabled="disabled" selected="selected">
                       Number of Sisters
@@ -211,10 +230,10 @@ function FamilyDetails() {
 
                 <div className="input-group1">
                   <select
-                  value={brothers}
+                    value={brothers}
                     id="nbrothers"
                     className="input--style-2 "
-                    onChange={(e)=> setBrothers(e.target.value)}
+                    onChange={(e) => setBrothers(e.target.value)}
                   >
                     <option disabled="disabled" selected="selected">
                       Number of Brothers
@@ -228,10 +247,10 @@ function FamilyDetails() {
 
                 <div className="input-group1">
                   <select
-                  value={msisters}
+                    value={msisters}
                     id="msister"
                     className="input--style-2 "
-                    onChange={(e)=> setMsisters(e.target.value)}
+                    onChange={(e) => setMsisters(e.target.value)}
                   >
                     <option disabled="disabled" selected="selected">
                       Married Sisters
@@ -245,10 +264,10 @@ function FamilyDetails() {
 
                 <div className="input-group1">
                   <select
-                  value={mbrothers}
+                    value={mbrothers}
                     id="mbrothers"
                     className="input--style-2 "
-                    onChange={(e)=> setMbrothers(e.target.value)}
+                    onChange={(e) => setMbrothers(e.target.value)}
                   >
                     <option disabled="disabled" selected="selected">
                       Married Brothers
@@ -262,12 +281,12 @@ function FamilyDetails() {
 
                 <div className="input-group">
                   <input
-                  value={parentsno}
+                    value={parentsno}
                     className="input--style-2"
                     type="text"
                     placeholder="Parents Mobile Number"
                     name="name"
-                    onChange={(e)=> setParentsno(e.target.value)}
+                    onChange={(e) => setParentsno(e.target.value)}
                   />
                 </div>
 

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import "./App.css";
-
 import { Route, Routes } from "react-router-dom";
+
 import Cool from "./Components/Details/Cool";
 import Contact from "./Components/Details/Contact";
 import PersonalDetails from "./Components/Details/PersonalDetails";
@@ -28,90 +27,113 @@ import HoroscopeBoxes from "./Components/horo/Horo";
 import UserContext from "./Components/Authcontext";
 // import {AuthContextProvider } from "./Components/Authcontext";
 
+import "./App.css";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
 
   return (
     <div className="app">
-     <UserContext.Provider value={{user,setUser}}>
-      {/* <AuthContextProvider/> */}
-      <Routes>
-        <Route path="/basic-info" element={<Cool />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/PersonalDetails" element={<PersonalDetails />} />
-        <Route path="/FamilyDetails" element={<FamilyDetails />} />
-        <Route
-          path="/ReligiousInformation"
-          element={<ReligiousInformation />}
-        />
-        <Route path="/HabitDetails" element={<HabitDetails />} />
-        <Route
-          path="/PartnerPreferenceDetails"
-          element={<PartnerPreferenceDetails />}
-        />
-        <Route path="/OtpForm" element={<OtpForm />} />
-        <Route path="/" element={<Register />} />
-        <Route
-          path="/Home"
-          element={
-            <>
-              <Header />
-              <Home />
-            </>
-          }
-        />
-        <Route
-          path="/matches"
-          element={
-            <>
-              <Header /> <Matches />
-            </>
-          }
-        />
-                {/* <Route path="/ViewProfile" element={<ViewProfile/>} /> */}
-                <Route path="/ViewProfile1" element={<ViewProfile1/>} />
-                <Route path="/ViewProfile" element={<ViewProfile/>} />
+      <UserContext.Provider value={{ user, setUser }}>
+        {/* <AuthContextProvider/> */}
+        <Routes>
+          <Route path="/basic-info" element={<Cool />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/PersonalDetails" element={<PersonalDetails />} />
+          <Route path="/FamilyDetails" element={<FamilyDetails />} />
+          <Route
+            path="/ReligiousInformation"
+            element={<ReligiousInformation />}
+          />
+          <Route path="/HabitDetails" element={<HabitDetails />} />
+          <Route
+            path="/PartnerPreferenceDetails"
+            element={<PartnerPreferenceDetails />}
+          />
+          <Route path="/OtpForm" element={<OtpForm />} />
+          <Route path="/" element={<Register />} />
+          <Route
+            path="/Home"
+            element={
+              <>
+                <Header />
+                <Home />
+              </>
+            }
+          />
+          <Route
+            path="/matches"
+            element={
+              <>
+                <Header /> <Matches />
+              </>
+            }
+          />
+          {/* <Route path="/ViewProfile" element={<ViewProfile/>} /> */}
+          <Route path="/ViewProfile1" element={<ViewProfile1 />} />
+          <Route path="/ViewProfile" element={<ViewProfile />} />
 
-                <Route path="/EditProfile" element={<EditProfile/>} />
-                <Route path="/Image" element={<Image/>} />
-                <Route path="/SearchBox" element={
-                  <>
-                  <Header/>
-                <SearchBox/>
-                  </>
-                } />
+          <Route path="/EditProfile" element={<EditProfile />} />
+          <Route path="/Image" element={<Image />} />
+          <Route
+            path="/SearchBox"
+            element={
+              <>
+                <Header />
+                <SearchBox />
+              </>
+            }
+          />
 
-                <Route path="/MailBox" element={
-                  <><Header/>
-                <Mailbox/> 
-                  </>
-                             }             />
-                <Route path="/BasicDetails1" element={
-                  <>   <Header />  <BasicDetails1/> 
-</>
-                } />
-                
-                <Route path="/EditPreference" element={
-                  <>   <Header />  <EditPreference/> 
-</>
-                } />
+          <Route
+            path="/MailBox"
+            element={
+              <>
+                <Header />
+                <Mailbox />
+              </>
+            }
+          />
+          <Route
+            path="/BasicDetails1"
+            element={
+              <>
+                <Header /> <BasicDetails1 />
+              </>
+            }
+          />
 
-<Route path="/horoscope" element={<> <Header/> <HoroscopeBoxes /></>}/>
+          <Route
+            path="/EditPreference"
+            element={
+              <>
+                <Header /> <EditPreference />
+              </>
+            }
+          />
 
-        <Route
-          path="/payment/paymentoption"
-          element={
-            <>
-              <Header />
-              <Payment />
-            </>
-          }
-        />
-      </Routes>
-      <Footer />
+          <Route
+            path="/horoscope"
+            element={
+              <>
+                <Header /> <HoroscopeBoxes />
+              </>
+            }
+          />
+
+          <Route
+            path="/payment/paymentoption"
+            element={
+              <>
+                <Header />
+                <Payment />
+              </>
+            }
+          />
+        </Routes>
+        <Footer />
       </UserContext.Provider>
-      </div>
+    </div>
   );
 }
 

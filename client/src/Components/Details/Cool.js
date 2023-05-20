@@ -5,13 +5,13 @@ import { API_BASE_URL } from "../api_config";
 import { UserContext } from "../Authcontext";
 
 import "./Col.css";
+
 function Cool() {
-  const { user } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
-  const [profile, setProfile] = useState("");
   const [marital, setMarital] = useState("");
   const [tongue, setTongue] = useState("");
   const [email, setEmail] = useState("");
@@ -29,7 +29,6 @@ function Cool() {
         last,
         dob,
         gender,
-        profile,
         marital,
         tongue,
         email,
@@ -37,16 +36,22 @@ function Cool() {
       },
       { withCredentials: true }
     );
-    navigate("/contact");
-    setFirst("");
-    setLast("");
-    setDob("");
-    setGender("");
-    setProfile("");
-    setMarital("");
-    setTongue("");
-    setEmail("");
+    if (response.data.auth) {
+      setUser((prevState) => ({
+        ...prevState,
+        basic: response.data.userBasic,
+      }));
+      navigate("/contact");
+      setFirst("");
+      setLast("");
+      setDob("");
+      setGender("");
+      setMarital("");
+      setTongue("");
+      setEmail("");
+    }
   };
+
   return (
     <div className="abc">
       <div className="page-wrapper bg-red p-t-180 p-b-100 font-robo">
@@ -138,7 +143,7 @@ function Cool() {
                   </div>
                 </div>
 
-                <div className="input-group1">
+                {/* <div className="input-group1">
                   <select
                     id="profile"
                     value={profile}
@@ -158,7 +163,7 @@ function Cool() {
                     <option value="relative">Relative</option>
                     <option value="friend">Friend</option>
                   </select>
-                </div>
+                </div> */}
 
                 <div className="input-group1">
                   <select
@@ -200,7 +205,7 @@ function Cool() {
                   <input
                     className="input--style-2"
                     type="text"
-                    value={user}
+                    value={user.userMob}
                     placeholder="Mobile Number"
                     name="Mb"
                     readOnly

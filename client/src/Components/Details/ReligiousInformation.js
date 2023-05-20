@@ -6,7 +6,7 @@ import UserContext from "../Authcontext";
 import "./Col.css";
 
 function ReligiousInformation() {
-  const {user} = useContext(UserContext);
+  const {user,setUser} = useContext(UserContext);
   const [religion, setReligion] = useState("");
   const [caste, setCaste] = useState("");
   const [Kulam, setKulam] = useState("");
@@ -18,14 +18,18 @@ function ReligiousInformation() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const resposne = await axios.post(
+    const response = await axios.post(
       `${API_BASE_URL}/api/ReligiousInformation`,
       {
-        religion,caste,Kulam,star,raasi,chevvai,naga,
+        user,religion,caste,Kulam,star,raasi,chevvai,naga,
       },
       {withCredentials: true}
     );
-
+      if(response.data.auth) {
+        setUser((prevState) => ({
+          ...prevState,
+          religiousDetails: response.data.religiousDetails,
+        }));
     navigate("/habitdetails");
     setReligion("")
     setCaste("");
@@ -34,6 +38,7 @@ function ReligiousInformation() {
     setRaasi("");
     setChevvai("");
     setNaga("");
+      }
   };
   return (
     <div className="abc">

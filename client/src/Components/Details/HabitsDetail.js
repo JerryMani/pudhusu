@@ -1,9 +1,11 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../api_config";
 import "./Col.css";
+import UserContext from "../Authcontext";
 function HabitDetails() {
+  const {user, setUser} = useContext(UserContext)
   const [home, setHome] = useState("");
   const[land,setLand] = useState("");
   const [plat, setPlat] = useState("");
@@ -17,10 +19,15 @@ function HabitDetails() {
     const response = await axios.post(
       `${API_BASE_URL}/api/HabitDetails`,{
 
-      home,land,plat,food,smoking,drinking,
+      user,home,land,plat,food,smoking,drinking,
       },
       {withCredentials: true}
     )
+    if(response.data.auth){
+      setUser((prevState) => ({
+        ...prevState,
+        habitDetails: response.data.habitDetails,
+      }));
     navigate("/partnerpreferencedetails");
     setHome("");
     setLand("");
@@ -28,6 +35,7 @@ function HabitDetails() {
     setFood("");
     setSmoking("");
     setDrinking("");
+    }
   };
   return (
     <div className="abc">
